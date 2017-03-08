@@ -6,15 +6,17 @@ General stuff
 #define PERIPH_RES_R (P6OUT)
 #define PERIPH_RES_B (BIT4)
 
-/******************************************************
+/* probably not using this
+******************************************************
 TSL2561 luminosity sensor pins
-******************************************************/
+******************************************************
 
 // uses peripheral on signal
 #define TSL_ADDR_SEL_R (P1OUT)
-#define TSL_ADDR_SEL_B (BIT6)
+#define TSL_ADDR_SEL_B (BIT3)
 #define TSL_SCL (UCB0SCL)
 #define TSL_SDA (UCB0SDA)
+*/
 
 /******************************************************
 XBee pins
@@ -32,7 +34,7 @@ XBee pins
 OV 7670 camera pins
 ******************************************************/
 
-#define CAM_PWR_ON_R (P1OUT)
+#define CAM_PWR_ON_R (P1OUT) // connect to power down
 #define CAM_PWR_ON_B (BIT2)
 #define CAM_SDA (UCB0SDA)
 #define CAM_SCL (UCB0SCL)
@@ -54,5 +56,22 @@ OV 7670 camera pins
 #define CAM_CLR_B6_B (BIT0)
 #define CAM_CLR_B7_R (P7IN)
 #define CAM_CLR_B7_B (BIT4)
+
+/******************************************************
+LPS pressure/alt
+******************************************************/
+
+// use peripheral power
+#define LPS_SCL (UCB0SCL)
+#define LPS_SDA (UCB0SDA)
+#define LPS_INT_R (P2IN)
+#define LPS_INT_B (BIT7)
+
+/******************************************************
+GPS
+******************************************************/
+
+#define GPS_TX (UCA0TXD)
+#define GPS_RX (UCA0RXD)
 
 
