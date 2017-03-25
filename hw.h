@@ -3,8 +3,6 @@ General stuff
 ******************************************************/
 #define PERIPH_PWR_ON_R (P6OUT)//connect to power transistor(s) between battery and general peripheral Vcc
 #define PERIPH_PWR_ON_B (BIT5)
-#define PERIPH_RES_R (P6OUT)
-#define PERIPH_RES_B (BIT4)
 
 /* probably not using this
 ******************************************************
@@ -22,20 +20,20 @@ TSL2561 luminosity sensor pins
 XBee pins
 ******************************************************/
 
-#define XBEE_PWR_ON_R (P6OUT) //connect to power transistor
+#define XBEE_PWR_ON_R (P6OUT) 
 #define XBEE_PWR_ON_B (BIT6)
 #define XBEE_TX (UCA0TXD) // connect to XBee RX
 #define XBEE_RX (UCA0RXD) // connect to XBee TX
 #define XBEE_STE (UCA0STE) // connect to XBee CTS
 #define XBEE_SLP_R (P6OUT)
-#define XBEE_SLP_B (BIT7)
+#define XBEE_SLP_B (BIT4) 
 
 /******************************************************
 OV 7670 camera pins
 ******************************************************/
 
-#define CAM_PWR_ON_R (P1OUT) // connect to power down
-#define CAM_PWR_ON_B (BIT2)
+#define CAM_PWR_ON_R (P6OUT) // connect to power down
+#define CAM_PWR_ON_B (BIT0)
 #define CAM_SDA (UCB0SDA)
 #define CAM_SCL (UCB0SCL)
 
@@ -52,9 +50,9 @@ OV 7670 camera pins
 #define CAM_CLR_B4_B (BIT5)
 #define CAM_CLR_B5_R (P2IN)
 #define CAM_CLR_B5_B (BIT6)
-#define CAM_CLR_B6_R (P7IN)
-#define CAM_CLR_B6_B (BIT0)
-#define CAM_CLR_B7_R (P7IN)
+#define CAM_CLR_B6_R (P1IN)
+#define CAM_CLR_B6_B (BIT5)
+#define CAM_CLR_B7_R (P1IN)
 #define CAM_CLR_B7_B (BIT4)
 
 /******************************************************
@@ -65,7 +63,7 @@ LPS pressure/alt
 #define LPS_SCL (UCB0SCL)
 #define LPS_SDA (UCB0SDA)
 #define LPS_INT_R (P2IN)
-#define LPS_INT_B (BIT7)
+#define LPS_INT_B (BIT7) 
 
 /******************************************************
 GPS
@@ -74,4 +72,9 @@ GPS
 #define GPS_TX (UCA0TXD)
 #define GPS_RX (UCA0RXD)
 
+/******************************************************
+Servo
+******************************************************/
 
+#define SERVO_PWM_R (POUT6)
+#define SERVO_PWM_B (BIT3)
