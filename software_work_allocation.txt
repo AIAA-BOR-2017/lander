@@ -1,0 +1,15 @@
+overarching structure - shared data, states, etc
+
+Serial:
+  XBee (UART)
+  GPS (UART)
+  Camera (nonstandard/I2C)
+  pressure/alt (I2C)
+
+ADCs:
+  Battery (extern)
+  Thermistor/photoresistor (internal plus GPIO selection)
+    analog circuit needs to be finalized
+
+Other:
+  Servo (PWM)
