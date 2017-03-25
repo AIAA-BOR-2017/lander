@@ -292,12 +292,6 @@ Wire Wire Line
 	6850 2450 7250 2450
 Connection ~ 6850 4650
 Wire Wire Line
-	3200 2150 3200 3400
-Connection ~ 3200 3400
-Wire Wire Line
-	3300 2150 3300 3300
-Connection ~ 3300 3300
-Wire Wire Line
 	4950 4750 4150 4750
 Wire Wire Line
 	4150 4750 4150 5500
