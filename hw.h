@@ -76,5 +76,13 @@ GPS
 Servo
 ******************************************************/
 
-#define SERVO_PWM_R (POUT6)
+#define SERVO_PWM_R (P6OUT)
 #define SERVO_PWM_B (BIT3)
+
+/******************************************************
+GPIOs for ADC selection
+******************************************************/
+#define THERM_EN_R (P6OUT)
+#define THERM_EN_B (BIT1)
+#define PHOT_EN_R (P6OUT)
+#define PHOT_EN_B (BIT2)

@@ -1,0 +1,23 @@
+#include <msp430.h> 
+#include "hw.h"
+
+/*
+ * main.c
+ */
+
+// globals
+char [CMD_QUEUE_LEN] queue;
+char* queue_head = &queue;
+char* queue_tail = queue + CMD_QUEUE_LEN - 1;
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
+	
+    initial_config();
+
+    _BIS_SR(GIE);
+
+    while true()
+
+	return 0;
+}
