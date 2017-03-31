@@ -18,7 +18,8 @@
 //  Built with Code Composer Studio v5
 //***************************************************************************************
 
-#include <msp430.h>				
+#include <msp430.h>
+#include "hw.h"
 
 int main(void) {
 	WDTCTL = WDTPW | WDTHOLD;		// Stop watchdog timer

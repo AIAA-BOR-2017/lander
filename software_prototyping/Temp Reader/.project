@@ -24,4 +24,17 @@
 		<nature>org.eclipse.cdt.core.ccnature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>hw.h</name>
+			<type>1</type>
+			<location>C:/Users/Isaiah/Documents/GitHub/lander/hw.h</location>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>header</name>
+			<value>file:/C:/Users/Isaiah/Documents/GitHub/lander/hw.h</value>
+		</variable>
+	</variableList>
 </projectDescription>
