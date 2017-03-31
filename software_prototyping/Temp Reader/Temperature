@@ -1,0 +1,3 @@
+P4SEL &= ~(Therm | Photo);
+P4DIR |= (Therm | Photo);
+P4OUT 
