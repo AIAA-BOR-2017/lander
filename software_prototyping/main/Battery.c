@@ -6,7 +6,7 @@
  */
 
 #include<msp430.h>
-#include "hw.h"
+#include <hw.h>
 
 int BatteryFunction(){
     /* Configure ADC Channel */
@@ -15,7 +15,7 @@ int BatteryFunction(){
     ADC12CTL0 |= ENC + ADC12SC; //Enable and start conversion
     while ((ADC12CTL1 & ADC12BUSY) == 0x01); //Wait for conversion to end
     }
-    battery_voltage = ADC12MEM0 & 0x0FFF;
+    int battery_voltage = ADC12MEM0 & 0x0FFF;
     return battery_volatge;
 }
 
