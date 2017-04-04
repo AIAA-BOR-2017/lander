@@ -190,9 +190,7 @@ F 3 "" H 4150 2700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1400 800  1400 850 
-Wire Wire Line
-	1400 850  1400 950 
+	1400 800  1400 950 
 Wire Wire Line
 	2950 5150 3950 5150
 Wire Wire Line
@@ -200,13 +198,9 @@ Wire Wire Line
 Wire Wire Line
 	1000 4550 1000 3400
 Wire Wire Line
-	1000 3400 3200 3400
+	1000 3400 4950 3400
 Wire Wire Line
-	3200 3400 4950 3400
-Wire Wire Line
-	900  3300 3300 3300
-Wire Wire Line
-	3300 3300 4950 3300
+	900  3300 4950 3300
 Wire Wire Line
 	900  3300 900  4650
 Wire Wire Line
@@ -218,9 +212,7 @@ Wire Wire Line
 Wire Wire Line
 	4050 5250 2950 5250
 Wire Wire Line
-	6750 4750 6950 4750
-Wire Wire Line
-	6950 4750 7450 4750
+	6750 4750 7450 4750
 Wire Wire Line
 	7450 4750 7450 3300
 Wire Wire Line
@@ -228,11 +220,9 @@ Wire Wire Line
 Wire Wire Line
 	7550 3200 7350 3200
 Wire Wire Line
-	7350 3200 7350 4650
+	7350 4650 7350 3200
 Wire Wire Line
-	7350 4650 6850 4650
-Wire Wire Line
-	6850 4650 6750 4650
+	6750 4650 7350 4650
 Wire Wire Line
 	6750 4250 7250 4250
 Wire Wire Line
@@ -357,9 +347,7 @@ Wire Wire Line
 	2100 850  1400 850 
 Connection ~ 1400 850 
 Wire Wire Line
-	2100 1150 2100 1250
-Wire Wire Line
-	2100 1250 2100 1300
+	2100 1150 2100 1300
 $Comp
 L GND #PWR?
 U 1 1 58CEDCA3
@@ -465,9 +453,7 @@ $EndComp
 Wire Wire Line
 	5850 5700 5850 5800
 Wire Wire Line
-	5350 5800 5850 5800
-Wire Wire Line
-	5850 5800 6250 5800
+	5350 5800 6250 5800
 Wire Wire Line
 	5350 5800 5350 6050
 Wire Wire Line
@@ -487,11 +473,7 @@ $EndComp
 Wire Wire Line
 	5350 6950 5350 7150
 Wire Wire Line
-	4550 7150 5350 7150
-Wire Wire Line
-	5350 7150 5800 7150
-Wire Wire Line
-	5800 7150 6250 7150
+	4550 7150 6250 7150
 Wire Wire Line
 	6250 7150 6250 6950
 Connection ~ 5800 7150
@@ -572,7 +554,11 @@ F 3 "" H 4900 5550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4950 4650 4200 4650
-Text Label 4200 4650 0    60   ~ 0
-servo_pwm
+	4950 5050 4250 5050
+Wire Wire Line
+	4250 5050 4250 6600
+Wire Wire Line
+	4250 6600 3100 6600
+Wire Wire Line
+	3100 6600 3100 6950
 $EndSCHEMATC

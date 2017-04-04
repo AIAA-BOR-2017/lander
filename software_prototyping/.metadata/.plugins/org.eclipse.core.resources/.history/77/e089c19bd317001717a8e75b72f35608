@@ -1,0 +1,11 @@
+/*
+ * lander_os.c
+ *
+ *  Created on: Apr 2, 2017
+ *      Author: zane
+ */
+
+cmd pop(cmd* head){
+    head = head-- & (BIT2|BIT1|BIT0); // decrement and wrap to 0-7
+    return &head;
+}

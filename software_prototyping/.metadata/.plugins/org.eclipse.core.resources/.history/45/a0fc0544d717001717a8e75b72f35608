@@ -1,0 +1,30 @@
+/*
+ * lander_os.h
+ *
+ *  Created on: Apr 2, 2017
+ *      Author: zane
+ */
+
+#ifndef LANDER_OS_H_
+#define LANDER_OS_H_
+
+typedef unsigned char cmd;
+
+// consts
+#define CMD_QUEUE_LEN 8
+
+// pop the top command from the stack
+cmd pop(cmd* head);
+
+// push new command to the bottom of the stack
+push(cmd data,cmd* tail);
+
+
+initial_config();
+landing_config();
+
+wait_for_landing();
+
+landing_ISR();
+
+#endif /* LANDER_OS_H_ */
