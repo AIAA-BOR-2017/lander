@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v16.9.1                     
 ******************************************************************************
->> Linked Tue Apr 11 18:27:57 2017
+>> Linked Thu Apr 13 18:30:59 2017
 
 OUTPUT FILE NAME:   <BOR2017_Lander.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs_noexit"  address: 00004400

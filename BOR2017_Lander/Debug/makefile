@@ -10,8 +10,10 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./altimeter.obj" \
 "./battery.obj" \
 "./main.obj" \
+"./servo.obj" \
 "../lnk_msp430f5529.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibmath.a \
@@ -154,8 +156,8 @@ BOR2017_Lander.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "battery.obj" "main.obj" 
-	-$(RM) "battery.d" "main.d" 
+	-$(RM) "altimeter.obj" "battery.obj" "main.obj" "servo.obj" 
+	-$(RM) "altimeter.d" "battery.d" "main.d" "servo.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
