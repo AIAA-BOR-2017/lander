@@ -1,0 +1,81 @@
+
+**** Build of configuration Debug for project xbee_test2-1 ****
+
+make all 
+Building file: ../lander_os.c
+Invoking: MSP430 Compiler
+"/home/zane/ti/ccsv5/tools/compiler/msp430_4.1.5/bin/cl430" -vmspx --abi=eabi --include_path="/home/zane/ti/ccsv5/ccs_base/msp430/include" --define=__MSP430F5529__ --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="lander_os.pp"  "../lander_os.c"
+Finished building: ../lander_os.c
+ 
+Building file: ../main.c
+Invoking: MSP430 Compiler
+"/home/zane/ti/ccsv5/tools/compiler/msp430_4.1.5/bin/cl430" -vmspx --abi=eabi --include_path="/home/zane/ti/ccsv5/ccs_base/msp430/include" --define=__MSP430F5529__ --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
+Finished building: ../main.c
+ 
+Building target: xbee_test2-1.out
+Invoking: MSP430 Linker
+"/home/zane/ti/ccsv5/tools/compiler/msp430_4.1.5/bin/cl430" -vmspx --abi=eabi --define=__MSP430F5529__ --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --printf_support=minimal -z --stack_size=160 --heap_size=160 --use_hw_mpy=F5 -i"/home/zane/ti/ccsv5/ccs_base/msp430/include" --reread_libs --warn_sections --rom_model -o "xbee_test2-1.out"  "./main.obj" "./lander_os.obj" -l"libc.a" "../lnk_msp430f5529.cmd" 
+<Linking>
+error: cannot find file "libc.a"
+warning: automatic RTS selection:  attempt to automatically link in index
+   library "libc.a" failed; file not found
+error: symbol "descending" redefined: first defined in "./main.obj"; redefined
+   in "./lander_os.obj"
+error: symbol "last_alt" redefined: first defined in "./main.obj"; redefined in
+   "./lander_os.obj"
+error: symbol "landed" redefined: first defined in "./main.obj"; redefined in
+   "./lander_os.obj"
+error: no input section is linked in
+"../lnk_msp430f5529.cmd", line 221: warning: Interrupt vector "RTC" does not
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 222: warning: Interrupt vector "PORT2" does not
+
+>> Compilation failure
+makefile:115: recipe for target 'xbee_test2-1.out' failed
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 223: warning: Interrupt vector "TIMER2_A1" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 224: warning: Interrupt vector "TIMER2_A0" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 225: warning: Interrupt vector "USCI_B1" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 226: warning: Interrupt vector "USCI_A1" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 227: warning: Interrupt vector "PORT1" does not
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 228: warning: Interrupt vector "TIMER1_A1" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 229: warning: Interrupt vector "TIMER1_A0" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 230: warning: Interrupt vector "DMA" does not
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 231: warning: Interrupt vector "USB_UBM" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 232: warning: Interrupt vector "TIMER0_A1" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 233: warning: Interrupt vector "TIMER0_A0" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 234: warning: Interrupt vector "ADC12" does not
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 235: warning: Interrupt vector "USCI_B0" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 236: warning: Interrupt vector "USCI_A0" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 237: warning: Interrupt vector "WDT" does not
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 238: warning: Interrupt vector "TIMER0_B1" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 239: warning: Interrupt vector "TIMER0_B0" does
+   not have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 240: warning: Interrupt vector "COMP_B" does not
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 241: warning: Interrupt vector "UNMI" does not
+   have an interrupt handler routine.
+"../lnk_msp430f5529.cmd", line 242: warning: Interrupt vector "SYSNMI" does not
+   have an interrupt handler routine.
+warning: entry-point symbol "_c_int00" undefined
+warning: no suitable entry-point found; setting to 0
+error: errors encountered during linking; "xbee_test2-1.out" not built
+make: *** [xbee_test2-1.out] Error 1
+
+**** Build Finished ****

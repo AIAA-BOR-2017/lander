@@ -1,0 +1,148 @@
+/*
+ * lander_os.c
+ *
+ *  Created on: Apr 2, 2017
+ *      Author: zane
+ */
+#include <math.h>
+#include <msp430f5529.h>
+#include "lander_os.h"
+//#include "hw.h"
+
+//cmd pop(cmd** head, cmd** tail){
+//    if (*head == *tail){
+//        return 0; // indicate error
+//    } else{
+//        (*head)++;
+//        return **head;
+//    }
+//}
+//
+//void push(cmd data, cmd** head, cmd** tail){
+//    if (*head != *tail){
+//        **tail = data;
+//        *tail = (*tail++) & (BIT2|BIT1|BIT0); // increment and wrap to 0-7
+//    }
+//    return;
+//}
+
+void wait_for_landing(void) {
+    while(!landed) {
+        _BIS_SR(GIE | LPM3); // go to LPM with interrupts enabled
+        // at this point only the altitude ISR will be going
+    }
+}
+
+void landing_ISR(void){
+    int alt = getAlt();
+    if (!descending) { // if descending not yet detected
+        if (last_alt-alt > 100 )
+            descending = 1; // descent reached
+    } else { // already descending
+        if (abs(last_alt-alt) < 1)
+            landed = 1; // landed!
+    }
+    last_alt = alt; // store alt for next time
+}
+
+void telemetry_ISR(void){
+    unsigned char packet[64]; // double long just in case
+    char i = 0;
+
+    packet[i] = 0; // clear to identify as telemetry
+    resolveEscape(packet, &i);
+
+    int battery = getBattery();
+    packet[i] = ((battery >> 8) & 0x0F); // first half of battery
+    resolveEscape(packet, &i);
+    packet[i] = battery & 0xFF; // second half of battery
+    resolveEscape(packet, &i);
+
+    int time = getTime();
+    packet[i] = (time >> 8) & 0xFF; // first half of time
+    resolveEscape(packet, &i);
+    packet[i] = time & 0xFF;
+    resolveEscape(packet, &i);
+
+    long pressure = getPressure();
+    packet[i] = (pressure >> 16) & 0xFF;
+    resolveEscape(packet, &i);
+    packet[i] = (pressure >> 8) & 0xFF;
+    resolveEscape(packet, &i);
+    packet[i] = pressure & 0xFF;
+    resolveEscape(packet, &i);
+
+    int temp = getTemp();
+    packet[i] = (temp >> 8) & 0xFF;
+    resolveEscape(packet, &i);
+    packet[i] = temp & 0xFF;
+    resolveEscape(packet, &i);
+
+    int humidity = getHumidity();
+    packet[i] = (humidity >> 8) & 0xFF;
+    resolveEscape(packet, &i);
+    packet[i] = humidity & 0xFF;
+    resolveEscape(packet, &i);
+
+    char gpsString[18];
+    char n;
+    for (n=0; n<18; n++) {
+        packet[i] = gpsString[n];
+        resolveEscape(packet, &i);
+    }
+
+    xBeeTransmit(packet,i);
+}
+
+void resolveEscape(unsigned char* packet, char* i){
+    switch (packet[*i]){
+    case 0x7e:
+        (*i)++;
+        packet[*i] = 0x7e;
+        break;
+    case 0x7d:
+        (*i)++;
+        packet[*i] = 0x7d;
+        break;
+    case 0x11:
+        (*i)++;
+        packet[*i] = 0x11;
+        break;
+    case 0x13:
+        (*i)++;
+        packet[*i] = 0x13;
+        break;
+    }
+    i++;
+}
+
+void xBeeTransmit(unsigned char* packet, char i) {
+    UARTByte(0x7e); // start byte
+    UARTByte(0x00); // MSB always zero
+    UARTByte(i); // LSB = length of packet
+    unsigned char sum=0;
+    char n;
+    for (n=0; n<=i; n++){
+        UARTByte(packet[n]); // data frame
+        sum += packet[n]; // add to running checksum
+    }
+    sum = 255-sum; // final checksum format
+    UARTByte(sum); // transmit checksum
+}
+
+void UARTByte(char c){
+    while (!(UCA0IFG&UCTXIFG));
+    UCA0TXBUF = c;
+}
+
+void xBeeSetup(){
+    //P3SEL |= BIT3+BIT4; //3.3/3.4 func mode
+    P4SEL |= BIT3+BIT2;
+    UCA0CTL1 |= UCSWRST; // reset UART state machine
+    UCA0CTL1 |= UCSSEL_2; // use smclk
+    UCA0BR0 = 0x68; // 1MHz/9600=0x68
+    UCA0BR1 = 0x00; // finish prescaler
+    UCA0MCTL |= UCBRS_1 + UCBRF_0; // modulation 0b100..0
+    UCA0IE |= UCRXIE; // enable interrupts
+    UCA0CTL1 &= ~UCSWRST; // release reset
+}

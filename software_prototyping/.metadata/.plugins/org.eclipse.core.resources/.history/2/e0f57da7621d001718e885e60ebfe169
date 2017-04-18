@@ -1,0 +1,39 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../lnk_msp430f110.cmd 
+
+C_SRCS += \
+../Battery.c \
+../lander_os.c \
+../main.c 
+
+C_DEPS += \
+./Battery.d \
+./lander_os.d \
+./main.d 
+
+OBJS += \
+./Battery.obj \
+./lander_os.obj \
+./main.obj 
+
+OBJS__QUOTED += \
+"Battery.obj" \
+"lander_os.obj" \
+"main.obj" 
+
+C_DEPS__QUOTED += \
+"Battery.d" \
+"lander_os.d" \
+"main.d" 
+
+C_SRCS__QUOTED += \
+"../Battery.c" \
+"../lander_os.c" \
+"../main.c" 
+
+

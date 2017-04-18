@@ -1,0 +1,1 @@
+"./Battery.obj" "./lander_os.obj" "./main.obj" "../lnk_msp430f110.cmd" -llibc.a 

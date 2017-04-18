@@ -1,0 +1,1 @@
+"./lander_os.obj" "./main.obj" "../lnk_msp430f5529.cmd" -llibmpu_init.a -llibmath.a -llibc.a 

@@ -1,0 +1,17 @@
+
+**** Build of configuration Debug for project xbee_test ****
+
+/home/zane/ti/ccsv7/utils/bin/gmake -k -j 2 all -O 
+Building file: /home/zane/AIAA-BOR-git/lander/software_prototyping/main/lander_os.c
+Invoking: MSP430 Compiler
+"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="/home/zane/ti/ccsv7/ccs_base/msp430/include" --include_path="/home/zane/AIAA-BOR-git/lander/software_prototyping/xbee_test" --include_path="/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --advice:power=all --define=_MPU_ENABLE --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="lander_os.d"  "/home/zane/AIAA-BOR-git/lander/software_prototyping/main/lander_os.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'lander_os.obj' failed
+"/home/zane/AIAA-BOR-git/lander/software_prototyping/main/lander_os.h", line 11: fatal error #1965: cannot open source file "hw.h"
+1 catastrophic error detected in the compilation of "/home/zane/AIAA-BOR-git/lander/software_prototyping/main/lander_os.c".
+Compilation terminated.
+gmake: *** [lander_os.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

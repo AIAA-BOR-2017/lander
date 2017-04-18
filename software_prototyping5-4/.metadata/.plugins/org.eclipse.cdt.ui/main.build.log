@@ -1,0 +1,89 @@
+
+**** Build of configuration Debug for project main ****
+
+/home/zane/ti/ccsv7/utils/bin/gmake -k -j 2 all -O 
+Building file: ../Battery.c
+Invoking: MSP430 Compiler
+"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="/home/zane/ti/ccsv7/ccs_base/msp430/include" --include_path="/home/zane/AIAA-BOR-git/lander/software_prototyping/main" --include_path="/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --advice:power=all --define=__MSP430F110__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Battery.d"  "../Battery.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'Battery.obj' failed
+"../Battery.c", line 9: fatal error #1965: cannot open source file "hw.h"
+1 catastrophic error detected in the compilation of "../Battery.c".
+Compilation terminated.
+gmake: *** [Battery.obj] Error 1
+Building file: ../main.c
+Invoking: MSP430 Compiler
+"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="/home/zane/ti/ccsv7/ccs_base/msp430/include" --include_path="/home/zane/AIAA-BOR-git/lander/software_prototyping/main" --include_path="/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --advice:power=all --define=__MSP430F110__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+
+>> Compilation failure
+subdir_rules.mk:21: recipe for target 'main.obj' failed
+"../main.c", line 2: fatal error #1965: cannot open source file "hw.h"
+1 catastrophic error detected in the compilation of "../main.c".
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+Building file: ../lander_os.c
+Invoking: MSP430 Compiler
+"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="/home/zane/ti/ccsv7/ccs_base/msp430/include" --include_path="/home/zane/AIAA-BOR-git/lander/software_prototyping/main" --include_path="/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --advice:power=all --define=__MSP430F110__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="lander_os.d"  "../lander_os.c"
+
+>> Compilation failure
+subdir_rules.mk:14: recipe for target 'lander_os.obj' failed
+"../lander_os.c", line 10: error #20: identifier "cmd" is undefined
+"../lander_os.c", line 10: error #20: identifier "cmd" is undefined
+"../lander_os.c", line 11: error #20: identifier "tail" is undefined
+"../lander_os.c", line 14: error #31: expression must have integral type
+"../lander_os.c", line 19: error #20: identifier "cmd" is undefined
+"../lander_os.c", line 19: error #20: identifier "cmd" is undefined
+"../lander_os.c", line 20: error #138: expression must be a modifiable lvalue
+"../lander_os.c", line 21: error #31: expression must have integral type
+"../lander_os.c", line 26: error #20: identifier "landed" is undefined
+"../lander_os.c", line 33: warning #225-D: function "readAlt" declared implicitly
+"../lander_os.c", line 34: error #20: identifier "descending" is undefined
+"../lander_os.c", line 35: error #20: identifier "last_alt" is undefined
+"../lander_os.c", line 38: error #20: identifier "last_alt" is undefined
+"../lander_os.c", line 39: error #20: identifier "landed" is undefined
+"../lander_os.c", line 41: error #20: identifier "last_alt" is undefined
+"../lander_os.c", line 49: warning #225-D: function "resolveEscape" declared implicitly
+"../lander_os.c", line 51: error #18: expected a ")"
+"../lander_os.c", line 51: error #29: expected an expression
+"../lander_os.c", line 53: error #20: identifier "battery" is undefined
+"../lander_os.c", line 56: error #18: expected a ")"
+"../lander_os.c", line 56: error #29: expected an expression
+"../lander_os.c", line 58: error #20: identifier "time" is undefined
+"../lander_os.c", line 58: error #20: identifier "oxFF" is undefined
+"../lander_os.c", line 61: error #18: expected a ")"
+"../lander_os.c", line 61: error #29: expected an expression
+"../lander_os.c", line 63: error #20: identifier "pressure" is undefined
+"../lander_os.c", line 68: error #18: expected a ")"
+"../lander_os.c", line 68: error #29: expected an expression
+"../lander_os.c", line 70: error #20: identifier "temp" is undefined
+"../lander_os.c", line 73: error #18: expected a ")"
+"../lander_os.c", line 73: error #29: expected an expression
+"../lander_os.c", line 73: error #66: expected a ";"
+"../lander_os.c", line 75: error #20: identifier "humidity" is undefined
+"../lander_os.c", line 78: error #20: identifier "n" is undefined
+"../lander_os.c", line 79: error #20: identifier "gpsString" is undefined
+"../lander_os.c", line 83: warning #225-D: function "xBeeTransmit" declared implicitly
+"../lander_os.c", line 46: remark #1535-D: (ULP 8.1) variable "i" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../lander_os.c", line 86: warning #161-D: declaration is incompatible with previous "resolveEscape" (declared at line 49)
+"../lander_os.c", line 87: error #31: expression must have integral type
+"../lander_os.c", line 90: error #31: expression must have integral type
+"../lander_os.c", line 94: error #31: expression must have integral type
+"../lander_os.c", line 98: error #31: expression must have integral type
+"../lander_os.c", line 102: error #31: expression must have integral type
+"../lander_os.c", line 108: error #20: identifier "i" is undefined
+"../lander_os.c", line 108: warning #161-D: declaration is incompatible with previous "xBeeTransmit" (declared at line 83)
+"../lander_os.c", line 108: error #142-D: unnamed prototyped parameters not allowed when body is present
+"../lander_os.c", line 109: warning #225-D: function "UARTByte" declared implicitly
+"../lander_os.c", line 111: error #20: identifier "i" is undefined
+"../lander_os.c", line 113: error #20: identifier "n" is undefined
+"../lander_os.c", line 113: error #66: expected a ";"
+"../lander_os.c", line 113: error #29: expected an expression
+"../lander_os.c", line 113: error #66: expected a ";"
+"../lander_os.c", line 121: warning #161-D: declaration is incompatible with previous "UARTByte" (declared at line 109)
+"../lander_os.c", line 122: remark #1528-D: (ULP 3.1) Detected flag polling using UCTXIFG. Recommend using an interrupt combined with enter LPMx and ISR
+45 errors detected in the compilation of "../lander_os.c".
+gmake: *** [lander_os.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

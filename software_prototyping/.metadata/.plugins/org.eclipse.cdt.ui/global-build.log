@@ -1,0 +1,28 @@
+
+**** Build of configuration Debug for project xbee_test2 ****
+
+/home/zane/ti/ccsv7/utils/bin/gmake -k -j 2 all -O 
+Building file: ../main.c
+Invoking: MSP430 Compiler
+"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --include_path="/home/zane/ti/ccsv7/ccs_base/msp430/include" --include_path="/home/zane/AIAA-BOR-git/lander/software_prototyping/xbee_test2" --include_path="/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+Finished building: ../main.c
+ 
+Building target: xbee_test2.out
+Invoking: MSP430 Linker
+"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"xbee_test2.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"/home/zane/ti/ccsv7/ccs_base/msp430/include" -i"/home/zane/ti/ccsv7/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/lib" -i"/home/zane/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="xbee_test2_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "xbee_test2.out" "./lander_os.obj" "./main.obj" "../lnk_msp430f5529.cmd"  -llibmath.a -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port A in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port B in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port C in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+remark #10372-D: (ULP 4.1) Detected uninitialized Port D in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: xbee_test2.out
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project xbee_test2 ****
+
+/home/zane/ti/ccsv7/utils/bin/gmake -k -j 2 all -O 
+gmake[1]: 'xbee_test2.out' is up to date.
+
+**** Build Finished ****
